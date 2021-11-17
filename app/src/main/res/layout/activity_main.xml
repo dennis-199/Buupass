@@ -10,11 +10,16 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_height="369dp"
         app:cardElevation="0dp"
-        android:layout_marginTop="120dp"
         app:cardCornerRadius="45dp"
         app:cardBackgroundColor="@android:color/transparent">
+        <io.alterac.blurkit.BlurLayout
+            android:id="@+id/blurLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:blk_downscaleFactor="0.6"
+            app:blk_fps="0" />
 
         <LinearLayout
             android:layout_width="match_parent"
