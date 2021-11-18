@@ -1,5 +1,6 @@
 package com.example.buupass;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,8 +14,13 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import io.alterac.blurkit.BlurLayout;
 
@@ -84,8 +90,8 @@ public class RegisterUser extends AppCompatActivity implements AdapterView.OnIte
         String password = edittextpassword.getText().toString().trim();
         int selectedId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(selectedId);
-        String radioMF = radioButton.getText().toString().trim();
-        String spinnerroles = spinner.getSelectedItem().toString().trim();
+        String Gender = radioButton.getText().toString().trim();
+        String Role = spinner.getSelectedItem().toString().trim();
 
         if(fullname.isEmpty()){
             edittextfullname.setError("Full name is required ");
@@ -117,6 +123,34 @@ public class RegisterUser extends AppCompatActivity implements AdapterView.OnIte
             edittextphonnumer.requestFocus();
             return;
         }
+        progressBar.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            User user = new User(fullname, email,phonenumber, Gender, Role);
+
+                            FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(RegisterUser.this, "You have been Registered succesfully ", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }else{
+                                        Toast.makeText(RegisterUser.this,"Failed to Register, Retry", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+
+                                }
+                            });
+                        }else{
+                            Toast.makeText(RegisterUser.this,"Failed to Register, Retry", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
 
     }
 }
