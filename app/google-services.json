@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "233973033926",
+    "project_id": "buupass-731fd",
+    "storage_bucket": "buupass-731fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233973033926:android:92307618168c6fe49920c7",
+        "android_client_info": {
+          "package_name": "com.example.buupass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233973033926-alnt9i55sh3oal0kps0j0om0r2o2088m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsbd3aIVu3mK98WXWcQWIWtljv2fzxXio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233973033926-alnt9i55sh3oal0kps0j0om0r2o2088m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

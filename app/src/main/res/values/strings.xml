@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">Buupass</string>
     <string name="login_Button">LOGIN</string>
-    <string name="forgot_password_button">Forgot password</string>
-    <string name="register_button">Register</string>
+    <string name="forgot_password_button"><u>Forgot password</u></string>
+    <string name="register_button"><u>Register</u></string>
+    <string name="email_address">Email Address</string>
+    <string name="your_full_name">Your Full Name</string>
+    <string name="your_age">Your Age</string>
+    <string name="your_phone_number">Your Phone Number</string>
+    <string name="male_radiobutton">Male</string>
+    <string name="femaleRadiobutton">Female</string>
+    <string name="password_edittext">Password</string>
+    <string name="register_user">Register user</string>
+    <string-array name="roles">
+        <item>Passenger</item>
+        <item>Driver</item>
+        <item>Saccos Manager</item>
+    </string-array>
 </resources>

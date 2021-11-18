@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/image1"
+    android:background="@drawable/image2"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -29,7 +29,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Username"
+                android:hint="@string/email_address"
                 android:textColorHint="@color/hintcolor"
                 android:textColor="@color/black"
                 android:textAlignment="center"
@@ -40,7 +40,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Password"
+                android:hint="@string/password_edittext"
                 android:textColorHint="@color/hintcolor"
                 android:textColor="@color/black"
                 android:textAlignment="center"
@@ -49,11 +49,13 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"/>
             <Button
-                android:layout_width="100dp"
+                android:layout_width="150dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
-                android:text="@string/login_Button"/>
+                android:background="@drawable/circle"
+                android:text="@string/login_Button"
+                android:textStyle="bold"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,12 +73,20 @@
                     android:layout_height="wrap_content"
                     android:text="@string/register_button"
                     android:textStyle="bold"
+                    android:onClick="Registerpage"
                     android:textColor="@color/white"
                     android:layout_marginEnd="12dp"
                     android:layout_marginStart="100dp"/>
 
 
             </LinearLayout>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
 
 
         </LinearLayout>
