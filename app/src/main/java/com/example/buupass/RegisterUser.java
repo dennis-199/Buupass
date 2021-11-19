@@ -137,6 +137,8 @@ public class RegisterUser extends AppCompatActivity implements AdapterView.OnIte
                                     if(task.isSuccessful()){
                                         Toast.makeText(RegisterUser.this, "You have been Registered succesfully ", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
+                                        Intent intent =  new Intent(RegisterUser.this, MainActivity.class);
+                                        startActivity(intent);
                                     }else{
                                         Toast.makeText(RegisterUser.this,"Failed to Register, Retry", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);

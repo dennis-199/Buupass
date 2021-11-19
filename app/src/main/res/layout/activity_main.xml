@@ -27,6 +27,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/email_address"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:hint="@string/email_address"
@@ -38,6 +39,7 @@
                 android:background="@drawable/circle"
                 android:layout_marginEnd="12dp"/>
             <EditText
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:hint="@string/password_edittext"
@@ -49,10 +51,12 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"/>
             <Button
+                android:id="@+id/login"
                 android:layout_width="150dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
+                android:onClick="SignIn"
                 android:background="@drawable/circle"
                 android:text="@string/login_Button"
                 android:textStyle="bold"/>
@@ -65,10 +69,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/forgot_password_button"
+                    android:onClick="Forgetpassword"
                     android:textColor="@color/white"
                     android:layout_marginStart="12dp"
                     android:textStyle="bold"/>
                 <TextView
+                    android:id="@+id/register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/register_button"
