@@ -19,6 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import io.alterac.blurkit.BlurLayout;
 
@@ -29,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinner;
 
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
     private ProgressBar progressBar;
 
 
@@ -101,10 +109,36 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    reference = FirebaseDatabase.getInstance().getReference("Users");
+                    userID = user.getUid();
+
 
                     if(user.isEmailVerified()){
                         // redirect to user profile
-                        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                User userRole = snapshot.getValue(User.class);
+                                String Role = userRole.Role;
+                                if(Role.equals("Passenger")){
+                                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
+                                }else if(Role.equals("Driver")){
+                                    startActivity(new Intent(MainActivity.this,DriverActivity.class));
+
+                                }else if(Role.equals("Saccos Manager")){
+                                    startActivity(new Intent(MainActivity.this,SaccosManagerActivity.class));
+                                }else {
+                                    Toast.makeText(MainActivity.this,"Error something went wrong", Toast.LENGTH_LONG).show();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
 
                     }else{
                         user.sendEmailVerification();
