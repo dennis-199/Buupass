@@ -43,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:hint="@string/password_edittext"
+                android:inputType="textPassword"
                 android:textColorHint="@color/hintcolor"
                 android:textColor="@color/black"
                 android:textAlignment="center"
