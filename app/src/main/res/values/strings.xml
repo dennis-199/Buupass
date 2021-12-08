@@ -11,6 +11,10 @@
     <string name="femaleRadiobutton">Female</string>
     <string name="password_edittext">Password</string>
     <string name="register_user">Register user</string>
+    <string name="reset_password_button">Reset Password</string>
+    <string name="login_page">LOGIN PAGE</string>
+    <string name="provide_email_to_reset_your_password">Provide Email To reset your password</string>
+    <string name="fill_in_your_details">Fill In Your Details</string>
     <string-array name="roles">
         <item>Passenger</item>
         <item>Driver</item>

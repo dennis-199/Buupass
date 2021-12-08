@@ -1,145 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@drawable/image2"
     tools:context=".RegisterUser">
-    <androidx.cardview.widget.CardView
-        android:layout_width="290dp"
-        android:layout_height="450dp"
-        app:cardElevation="0dp"
-        android:layout_marginTop="51dp"
-        app:cardCornerRadius="45dp"
-        app:cardBackgroundColor="@android:color/transparent">
-        <io.alterac.blurkit.BlurLayout
-            android:id="@+id/blurLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:blk_downscaleFactor="0.6"
-            app:blk_fps="0" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <EditText
-                android:id="@+id/full_name"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:hint="@string/your_full_name"
-                android:textColorHint="@color/hintcolor"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:layout_marginTop="33dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/circle"
-                android:layout_marginEnd="12dp"/>
-            <EditText
-                android:id="@+id/email_address"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:hint="@string/email_address"
-                android:textColorHint="@color/hintcolor"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/circle"
-                android:layout_marginEnd="12dp"/>
+    <TextView
+        android:id="@+id/textv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/fill_in_your_details"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
+    <ImageView
+        android:layout_width="54dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="3dp"
+        android:layout_below="@id/textv"
+        android:src="@drawable/leaf"
+        android:layout_centerHorizontal="true"/>
 
-            <EditText
-                android:id="@+id/phone_number"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <androidx.cardview.widget.CardView
+            android:layout_width="290dp"
+            android:layout_height="450dp"
+            app:cardElevation="0dp"
+            android:layout_marginTop="51dp"
+            app:cardCornerRadius="45dp"
+            app:cardBackgroundColor="@android:color/transparent">
+            <io.alterac.blurkit.BlurLayout
+                android:id="@+id/blurLayout"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:hint="@string/your_phone_number"
-                android:textColorHint="@color/hintcolor"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/circle"
-                android:layout_marginEnd="12dp"/>
-            <Spinner
-                android:id="@+id/spinner1"
+                android:layout_height="match_parent"
+                app:blk_downscaleFactor="0.6"
+                app:blk_fps="0" />
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/circle"
-                android:layout_marginEnd="12dp"/>
-            <RadioGroup
-                android:id="@+id/radio_group"
-                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/your_full_name"
+                    android:textColorHint="@color/hintcolor"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/circle"
+                    android:layout_marginEnd="12dp"/>
+                <EditText
+                    android:id="@+id/email_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/email_address"
+                    android:textColorHint="@color/hintcolor"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/circle"
+                    android:layout_marginEnd="12dp"/>
+
+                <EditText
+                    android:id="@+id/phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/your_phone_number"
+                    android:textColorHint="@color/hintcolor"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:inputType="phone"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/circle"
+                    android:layout_marginEnd="12dp"/>
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/circle"
+                    android:layout_marginEnd="12dp"/>
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+
+                    android:orientation="horizontal"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/radioMale"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/circle"
+                        android:text="@string/male_radiobutton" />
+
+                    <RadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/circle"
+                        android:layout_height="wrap_content"
+                        android:text="@string/femaleRadiobutton" />
+                </RadioGroup>
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/password_edittext"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/hintcolor"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/circle"
+                    android:layout_marginEnd="12dp"/>
+                <Button
+                    android:id="@+id/register_userButton"
+                    android:layout_width="200dp"
+                    android:layout_height="45dp"
+                    android:text="@string/register_user"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:onClick="RegisterUser"
+                    android:textAlignment="center"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/circle"
+                    android:layout_marginEnd="12dp"/>
+
+            </LinearLayout>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-
-                android:orientation="horizontal"
-                 >
-
-                <RadioButton
-                    android:id="@+id/radioMale"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/circle"
-                    android:text="@string/male_radiobutton" />
-
-                <RadioButton
-                    android:id="@+id/radioFemale"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/circle"
-                    android:layout_height="wrap_content"
-                    android:text="@string/femaleRadiobutton" />
-            </RadioGroup>
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:hint="@string/password_edittext"
-                android:inputType="textPassword"
-                android:textColorHint="@color/hintcolor"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/circle"
-                android:layout_marginEnd="12dp"/>
-            <Button
-                android:id="@+id/register_userButton"
-                android:layout_width="200dp"
-                android:layout_height="45dp"
-                android:text="@string/register_user"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:onClick="RegisterUser"
-                android:textAlignment="center"
-                android:layout_marginTop="21dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/circle"
-                android:layout_marginEnd="12dp"/>
+                android:visibility="gone"/>
 
-        </LinearLayout>
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
-
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 
-</LinearLayout>
+</RelativeLayout>
