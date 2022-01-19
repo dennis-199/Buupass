@@ -5,14 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/topcolor"
+            android:minHeight="?attr/actionBarSize">
+            <TextView
+                android:id="@+id/greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="WELCOME"
+                android:textSize="21sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        android:layout_marginEnd="168dp"
-        android:text="You are in the passenfer profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PAY" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="book now" />
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
