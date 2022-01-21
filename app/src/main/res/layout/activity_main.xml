@@ -29,12 +29,14 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="309dp"
-            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="45dp"
-            app:cardBackgroundColor="@android:color/transparent">
+            app:cardElevation="0dp">
+
             <io.alterac.blurkit.BlurLayout
                 android:id="@+id/blurLayout"
                 android:layout_width="match_parent"
@@ -46,50 +48,54 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <ProgressBar
                     android:id="@+id/progressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_gravity="center"
-                    android:visibility="gone"/>
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone" />
 
                 <EditText
                     android:id="@+id/email_address"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:hint="@string/email_address"
-                    android:textColorHint="@color/hintcolor"
-                    android:textColor="@color/black"
-                    android:textAlignment="center"
-                    android:layout_marginTop="35dp"
-                    android:inputType="textEmailAddress"
                     android:layout_marginStart="12dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="12dp"
                     android:background="@drawable/circle"
-                    android:layout_marginEnd="12dp"/>
+                    android:hint="@string/email_address"
+                    android:inputType="textEmailAddress"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hintcolor" />
+
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/circle"
                     android:hint="@string/password_edittext"
                     android:inputType="textPassword"
-                    android:textColorHint="@color/hintcolor"
-                    android:textColor="@color/black"
                     android:textAlignment="center"
-                    android:background="@drawable/circle"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"/>
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hintcolor" />
+
                 <Button
                     android:id="@+id/login"
                     android:layout_width="150dp"
                     android:layout_height="45dp"
-                    android:layout_marginTop="30dp"
                     android:layout_gravity="center"
-                    android:onClick="SignIn"
+                    android:layout_marginTop="30dp"
                     android:background="@drawable/circle"
+                    android:onClick="SignIn"
                     android:text="@string/login_Button"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -99,25 +105,25 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/forgot_password_button"
-                        android:onClick="Forgetpassword"
-                        android:textColor="@color/white"
                         android:layout_marginStart="12dp"
-                        android:textStyle="bold"/>
+                        android:onClick="Forgetpassword"
+                        android:text="@string/forgot_password_button"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/register"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/register_button"
-                        android:textStyle="bold"
-                        android:onClick="Registerpage"
-                        android:textColor="@color/white"
+                        android:layout_marginStart="100dp"
                         android:layout_marginEnd="12dp"
-                        android:layout_marginStart="100dp"/>
+                        android:onClick="Registerpage"
+                        android:text="@string/register_button"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
-
 
 
             </LinearLayout>
