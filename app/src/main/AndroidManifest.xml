@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Buupass">
         <activity
+            android:name=".PostActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForgottenPassword"
             android:exported="false" />
         <activity
