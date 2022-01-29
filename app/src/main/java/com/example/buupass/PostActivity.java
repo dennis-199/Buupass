@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
@@ -31,6 +33,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
+import java.time.Year;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -43,10 +46,12 @@ public class PostActivity extends AppCompatActivity {
     private EditText textTo;
 
     int hour,minute;
+    private int mDate, mMonth, mYear;
 
 
     private Button postBtn;
     private Button timeButton;
+    private Button date_Button;
     private EditText NoOfVehicles;
     private EditText supervisorName;
     private EditText terminal;
@@ -81,6 +86,8 @@ public class PostActivity extends AppCompatActivity {
         textTerminal = findViewById(R.id.terminalpoint);
         textFrom = findViewById(R.id.fromWhere);
         textTo = findViewById(R.id.toWhere);
+
+        date_Button = findViewById(R.id.dateButton);
 
 
         timeButton = findViewById(R.id.timeButton);
@@ -125,6 +132,7 @@ public class PostActivity extends AppCompatActivity {
                 final String From = textFrom.getText().toString().trim();
                 final String To = textTo.getText().toString().trim();
                 final String DepatureTime = timeButton.getText().toString().trim();
+                final String DepartureDate = date_Button.getText().toString().trim();
 
 
                 //get the date and time of the post
@@ -167,6 +175,7 @@ public class PostActivity extends AppCompatActivity {
                                                     newPost.child("From").setValue(From);
                                                     newPost.child("To").setValue(To);
                                                     newPost.child("Departure time").setValue(DepatureTime);
+                                                    newPost.child("Departure Date").setValue(DepartureDate);
                                                     newPost.child("postImage").setValue(imageUrl);
                                                     newPost.child("uid").setValue(mCurrentUser.getUid());
                                                     newPost.child("time").setValue(saveCurrentTime);
@@ -226,6 +235,31 @@ public class PostActivity extends AppCompatActivity {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, style,onTimeSetListener, hour, minute,true);
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
+
+    }
+
+    public void DatePicker(View view) {
+        DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+                mYear = year;
+                mMonth = month;
+                mDate = dayOfMonth;
+
+                date_Button.setText(String.format(Locale.getDefault(),dayOfMonth+"/"+month+"/"+year, mDate, mMonth, mYear));
+
+
+            }
+        };
+        int style = AlertDialog.THEME_HOLO_DARK;
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, style, onDateSetListener, mDate,mMonth, mYear);
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()-1000);
+        datePickerDialog.setTitle("Select Date");
+        datePickerDialog.show();
+
+
 
     }
 }

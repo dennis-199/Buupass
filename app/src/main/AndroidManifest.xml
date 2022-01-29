@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Buupass"
         tools:replace="android:icon">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MpesaActivity"
             android:exported="false" />
         <activity
@@ -36,7 +39,7 @@
             android:name=".RegisterUser"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".splashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

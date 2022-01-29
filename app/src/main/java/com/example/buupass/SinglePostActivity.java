@@ -19,7 +19,7 @@ import com.squareup.picasso.Picasso;
 
 public class SinglePostActivity extends AppCompatActivity {
     private ImageView singleImage;
-    private TextView singleTitle, singleDesc, singleFROM, singleTO, singleTerminal, singleDepartureTime;
+    private TextView singleTitle, singleDesc, singleFROM, singleTO, singleTerminal, singleDepartureTime,singleDepartute_Date;
     String post_key = null;
     private DatabaseReference mDatabase;
     private Button deleteBtn;
@@ -35,6 +35,7 @@ public class SinglePostActivity extends AppCompatActivity {
         singleFROM= findViewById(R.id.singleFrom);
         singleTO=findViewById(R.id.singleTo);
         singleDepartureTime=findViewById(R.id.singledeparture);
+        singleDepartute_Date = findViewById(R.id.singledepartureDate);
 
         singleTerminal=findViewById(R.id.singleTerminal);
 
@@ -63,11 +64,13 @@ public class SinglePostActivity extends AppCompatActivity {
                 String Terminal = (String) dataSnapshot.child("Terminal").getValue();
                 String To_origin = (String) dataSnapshot.child("To").getValue();
                 String depatureTime = (String) dataSnapshot.child("Departure time").getValue();
+                String depatureDate = (String) dataSnapshot.child("Departure Date").getValue();
                 singleTitle.setText(post_title);
                 singleDesc.setText(post_desc);
                 singleFROM.setText(Terminal_point);
                 singleTO.setText(To_origin);
                 singleDepartureTime.setText(depatureTime);
+                singleDepartute_Date.setText(depatureDate);
                 singleTerminal.setText(Terminal);
                 Picasso.with(SinglePostActivity.this).load(post_image).into(singleImage);
                 if (mAuth.getCurrentUser().getUid().equals(post_uid)) {

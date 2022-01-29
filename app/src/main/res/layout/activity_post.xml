@@ -99,6 +99,18 @@
                 android:onClick="popTimePicker"
                 android:textColor="@color/black"
                 android:hint="SELECT TIME "/>
+            <Button
+                android:id="@+id/dateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/circle"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:onClick="DatePicker"
+                android:textColor="@color/black"
+                android:hint="SELECT DATE "/>
 
 
 

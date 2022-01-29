@@ -63,7 +63,7 @@ public class fragment1 extends Fragment {
     ArrayAdapter<String> arrayAdapter2;
 
     AlertDialog.Builder comment_alert;
-    LayoutInflater inflater;
+    LayoutInflater inflater2;
 
 
 
@@ -76,6 +76,9 @@ public class fragment1 extends Fragment {
 
 
         View view = inflater.inflate(R.layout.fragment_fragment1, container, false);
+
+        comment_alert = new AlertDialog.Builder(getContext());
+        inflater2 = this.getLayoutInflater();
 
         recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -265,7 +268,7 @@ public class fragment1 extends Fragment {
                 holder.commentPostButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        View view = inflater.inflate(R.layout.comment_pop, null);
+                        View view = inflater2.inflate(R.layout.comment_pop, null);
                         //start alert dialog
                         comment_alert.setTitle("Add comment").setMessage("Please add a comment").setPositiveButton("Comment", new DialogInterface.OnClickListener() {
                             @Override
