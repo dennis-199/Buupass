@@ -3,6 +3,8 @@ package com.example.buupass;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,12 +32,28 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class PostActivity extends AppCompatActivity {
     private ImageButton imageBtn;
     private EditText textTitle;
     private EditText textDesc;
+    private EditText textTerminal;
+    private EditText textFrom;
+    private EditText textTo;
+
+    int hour,minute;
+
+
     private Button postBtn;
+    private Button timeButton;
+    private EditText NoOfVehicles;
+    private EditText supervisorName;
+    private EditText terminal;
+    private EditText origin;
+    private EditText destination;
+    private EditText via;
+    private EditText setFare;
 
     //Declare an Instance of the Storage reference where we will upload the post photo
     private StorageReference mStorageRef;
@@ -59,6 +78,19 @@ public class PostActivity extends AppCompatActivity {
         postBtn = findViewById(R.id.postBtn);
         textDesc = findViewById(R.id.textDesc);
         textTitle = findViewById(R.id.textTitle);
+        textTerminal = findViewById(R.id.terminalpoint);
+        textFrom = findViewById(R.id.fromWhere);
+        textTo = findViewById(R.id.toWhere);
+
+
+        timeButton = findViewById(R.id.timeButton);
+        NoOfVehicles = findViewById(R.id.NoOfvehicles);
+        supervisorName = findViewById(R.id.supervisorname);
+        terminal = findViewById(R.id.terminal);
+        origin = findViewById(R.id.origin);
+        destination=findViewById(R.id.Destination);
+        via=findViewById(R.id.via);
+        setFare=findViewById(R.id.farePrice);
 
         //Initialize the storage reference
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -89,6 +121,12 @@ public class PostActivity extends AppCompatActivity {
                 //get title and desc from the edit texts
                 final String PostTitle = textTitle.getText().toString().trim();
                 final String PostDesc = textDesc.getText().toString().trim();
+                final String Terminal = textTerminal.getText().toString().trim();
+                final String From = textFrom.getText().toString().trim();
+                final String To = textTo.getText().toString().trim();
+                final String DepatureTime = timeButton.getText().toString().trim();
+
+
                 //get the date and time of the post
                 java.util.Calendar calendar = Calendar.getInstance();
                 SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
@@ -125,6 +163,10 @@ public class PostActivity extends AppCompatActivity {
                                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                                     newPost.child("title").setValue(PostTitle);
                                                     newPost.child("desc").setValue(PostDesc);
+                                                    newPost.child("Terminal").setValue(Terminal);
+                                                    newPost.child("From").setValue(From);
+                                                    newPost.child("To").setValue(To);
+                                                    newPost.child("Departure time").setValue(DepatureTime);
                                                     newPost.child("postImage").setValue(imageUrl);
                                                     newPost.child("uid").setValue(mCurrentUser.getUid());
                                                     newPost.child("time").setValue(saveCurrentTime);
@@ -167,5 +209,23 @@ public class PostActivity extends AppCompatActivity {
             //set the image
             imageBtn.setImageURI(uri);
         }
+    }
+
+    public void popTimePicker(View view) {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int selectedHour, int selectedMinute) {
+                hour = selectedHour;
+                minute = selectedMinute;
+                timeButton.setText(String.format(Locale.getDefault(),"%02d:%02d", hour,minute));
+
+            }
+        };
+        int style = AlertDialog.THEME_HOLO_DARK;
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style,onTimeSetListener, hour, minute,true);
+        timePickerDialog.setTitle("Select Time");
+        timePickerDialog.show();
+
     }
 }

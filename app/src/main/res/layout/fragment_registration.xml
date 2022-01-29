@@ -41,6 +41,7 @@
                     android:layout_marginTop="10dp"
                     android:visibility="gone" />
                 <EditText
+                    android:id="@+id/saccos_name"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginStart="12dp"
@@ -55,6 +56,7 @@
 
                 </EditText>
                 <EditText
+                    android:id="@+id/registrationNo"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginStart="12dp"
@@ -68,6 +70,7 @@
                     android:textColorHint="@color/hintcolor">
                 </EditText>
                 <EditText
+                    android:id="@+id/kraID"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginStart="12dp"
@@ -75,13 +78,14 @@
                     android:layout_marginEnd="12dp"
                     android:background="@drawable/circle"
                     android:hint="KRA PIN"
-                    android:inputType="number"
+                    android:inputType="textCapCharacters"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textColorHint="@color/hintcolor">
 
                 </EditText>
                 <EditText
+                    android:id="@+id/location"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:hint="Location"
@@ -96,6 +100,7 @@
 
                 </EditText>
                 <EditText
+                    android:id="@+id/matatu_bus"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:hint="Matatu/Bus Name"
@@ -110,6 +115,7 @@
 
                 </EditText>
                 <Button
+                    android:id="@+id/registerBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"

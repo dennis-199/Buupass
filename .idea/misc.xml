@@ -3,18 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/drawable-v24/circular_bordershape.xml" value="0.10052083333333334" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/drawable-v24/comment.xml" value="0.10052083333333334" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/drawable-v24/dislike.xml" value="0.10052083333333334" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/drawable-v24/ic_share.xml" value="0.10052083333333334" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/drawable-v24/like.xml" value="0.10052083333333334" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/drawable/circle.xml" value="0.23692307692307693" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/drawable/rectangle.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_content.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_driver.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_forgotten_password.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_post.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_mpesa.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_post.xml" value="0.16" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_profile.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_register_user.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_saccos_manager.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_single_post.xml" value="0.16" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/app_bar.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/app_bar_saccosactivity.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/card_items.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/comment_pop.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/fragment_checkusers.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/fragment_fragment1.xml" value="0.19322916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/fragment_fragment2.xml" value="0.19322916666666667" />
@@ -22,6 +31,7 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/fragment_registration.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/fragment_settings.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/nav_header.xml" value="0.33" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/menu/menu_main.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/menu/my_navigation_item.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/menu/secondactivity.xml" value="0.10989583333333333" />
       </map>

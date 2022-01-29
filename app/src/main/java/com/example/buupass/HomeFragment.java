@@ -2,6 +2,8 @@ package com.example.buupass;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.AlertDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.buupass.databinding.FragmentHomeBinding;
@@ -35,6 +39,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 
 public class HomeFragment extends Fragment {
@@ -43,10 +48,22 @@ public class HomeFragment extends Fragment {
     private ImageButton imageBtn;
     private EditText textTitle;
     private EditText textDesc;
+    private FirebaseUser user;
+    private String userID;
+    private DatabaseReference reference;
     private Button postBtn;
+    private Button timeButton;
+    private EditText NoOfVehicles;
+    private EditText supervisorName;
+    private EditText terminal;
+    private EditText origin;
+    private EditText destination;
+    private EditText via;
+    private EditText setFare;
 
-    //Declare an Instance of the Storage reference where we will upload the post photo
-    private StorageReference mStorageRef;
+    int hour,minute;
+
+
     //Declare an Instance of the database reference where we will be saving the post details
     private DatabaseReference databaseRef;
     //Declare an Instance of firebase authentication
@@ -67,6 +84,42 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         Button button = (Button) root.findViewById(R.id.nextButton);
+        timeButton = root.findViewById(R.id.timeButton);
+        NoOfVehicles = root.findViewById(R.id.NoOfvehicles);
+        supervisorName = root.findViewById(R.id.supervisorname);
+        terminal = root.findViewById(R.id.terminal);
+        origin = root.findViewById(R.id.origin);
+        destination=root.findViewById(R.id.Destination);
+        via=root.findViewById(R.id.via);
+        setFare=root.findViewById(R.id.farePrice);
+
+
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("SACCOS");
+        userID = user.getUid();
+
+        final TextView greetingTextView = (TextView) root.findViewById(R.id.matatuBusID);
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Saccos userprofile = snapshot.getValue(Saccos.class);
+                if(userprofile!= null){
+                    String busName = userprofile.getMatatu_BusName();
+
+                    greetingTextView.setText(busName + "!");
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,9 +130,12 @@ public class HomeFragment extends Fragment {
 
 
 
+
+
         return root;
 
 
     }
+
 
 }

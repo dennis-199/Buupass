@@ -35,17 +35,21 @@
                 android:layout_marginTop="35dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <EditText
+                <TextView
+                    android:id="@+id/matatuBusID"
                     android:layout_width="175dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
                     android:layout_marginStart="15dp"
-                    android:inputType="textCapCharacters"
 
-                    android:hint="Matatu/Bus Name">
 
-                </EditText>
+                    android:text="Matatu/Bus Name">
+
+                </TextView>
                 <EditText
+                    android:id="@+id/NoOfvehicles"
                     android:layout_width="175dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
@@ -62,12 +66,14 @@
                 android:layout_marginTop="90dp"
                 android:orientation="horizontal">
                 <EditText
+                    android:id="@+id/supervisorname"
                     android:layout_width="175dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="15dp"
                     android:layout_weight="1"
                     android:hint="Supervisor Name"/>
                 <EditText
+                    android:id="@+id/terminal"
                     android:layout_width="175dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="15dp"
@@ -82,7 +88,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
-            android:layout_height="250dp"
+            android:layout_height="260dp"
             android:elevation="10dp"
             app:cardCornerRadius="20dp">
             <TextView
@@ -109,6 +115,7 @@
                     android:textColor="@color/black"
                     />
                 <EditText
+                    android:id="@+id/origin"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="27dp"
@@ -133,6 +140,7 @@
                     android:textColor="@color/black"
                     />
                 <EditText
+                    android:id="@+id/Destination"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="27dp"
@@ -157,6 +165,7 @@
                     android:textColor="@color/black"
                     />
                 <EditText
+                    android:id="@+id/via"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="27dp"
@@ -181,6 +190,7 @@
                     android:textColor="@color/black"
                     />
                 <EditText
+                    android:id="@+id/farePrice"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="27dp"
@@ -190,18 +200,28 @@
                     android:hint="Set fare "/>
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="196dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+
+                    android:layout_marginStart="15dp"
+                    android:text="Depature Time"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
+
+
+            </LinearLayout>
+
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-    <CheckBox
-        android:layout_marginTop="490dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        android:textSize="18sp"
-        android:layout_marginStart="20dp"
-        android:text="Agree to terms and conditions"/>
+
     <Button
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
