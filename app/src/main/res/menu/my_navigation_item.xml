@@ -15,8 +15,8 @@
         android:title="Register SACCO" />
     <item
         android:id="@+id/nav_checkusers"
-        android:icon="@drawable/ic_baseline_supervised_user_circle_24"
-        android:title="Users" />
+        android:icon="@drawable/ic_baseline_collections_24"
+        android:title="Posts" />
     <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/ic_baseline_settings_24"

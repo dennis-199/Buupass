@@ -14,6 +14,7 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_driver.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_forgotten_password.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_message.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_mpesa.xml" value="0.22" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_post.xml" value="0.16" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/activity_profile.xml" value="0.22447916666666667" />
@@ -32,9 +33,11 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/fragment_registration.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/fragment_settings.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/nav_header.xml" value="0.33" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/layout/receipt_item.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/menu/menu_main.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/menu/my_navigation_item.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/menu/secondactivity.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Buupass/app/src/main/res/xml/provider_paths.xml" value="0.20425724637681159" />
       </map>
     </option>
   </component>

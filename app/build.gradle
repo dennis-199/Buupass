@@ -22,6 +22,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
     buildTypes.each {
 
         // CONSUMER_KEY & CONSUMER_SECRET Build Variables are referenced from gradle.properties file
@@ -78,5 +80,8 @@ dependencies {
 
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    //Libpdf
+    implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.karumi:dexter:5.0.0'
 
 }

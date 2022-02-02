@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -79,5 +81,12 @@ public class ProfileActivity extends AppCompatActivity {
         vpAdapter.addFragment(new fragment1(), "PAY");
         vpAdapter.addFragment(new fragment2(), "BOOK NOW");
         viewPager.setAdapter(vpAdapter);
+    }
+
+    public void messegesview(View view) {
+
+        Intent intent = new Intent(ProfileActivity.this, MessageActivity.class);
+        startActivity(intent);
+
     }
 }

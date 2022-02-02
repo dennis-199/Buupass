@@ -203,6 +203,7 @@
             android:textColor="#fff"
             android:textStyle="bold" />
         <Button
+            android:id="@+id/payButton"
             android:layout_width="165dp"
             android:layout_height="45dp"
             android:textSize="18sp"

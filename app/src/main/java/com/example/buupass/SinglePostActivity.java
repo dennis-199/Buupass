@@ -22,7 +22,7 @@ public class SinglePostActivity extends AppCompatActivity {
     private TextView singleTitle, singleDesc, singleFROM, singleTO, singleTerminal, singleDepartureTime,singleDepartute_Date;
     String post_key = null;
     private DatabaseReference mDatabase;
-    private Button deleteBtn;
+    private Button deleteBtn, payBtn;
     private FirebaseAuth mAuth;
 
     @Override
@@ -43,6 +43,8 @@ public class SinglePostActivity extends AppCompatActivity {
         post_key = getIntent().getExtras().getString("PostID");
         deleteBtn = findViewById(R.id.deleteBtn);
         mAuth = FirebaseAuth.getInstance();
+        payBtn = findViewById(R.id.payButton);
+
         deleteBtn.setVisibility(View.INVISIBLE);
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +55,7 @@ public class SinglePostActivity extends AppCompatActivity {
                 startActivity(mainIntent);
             }
         });
+
         mDatabase.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -76,6 +79,9 @@ public class SinglePostActivity extends AppCompatActivity {
                 if (mAuth.getCurrentUser().getUid().equals(post_uid)) {
                     deleteBtn.setVisibility(View.VISIBLE);
                 }
+                if (mAuth.getCurrentUser().getUid().equals(post_uid)){
+                    payBtn.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
@@ -91,5 +97,6 @@ public class SinglePostActivity extends AppCompatActivity {
         Intent intent = new Intent(SinglePostActivity.this, MpesaActivity.class);
         intent.putExtra("keyname",faretopay);
         startActivity(intent);
+
     }
 }
