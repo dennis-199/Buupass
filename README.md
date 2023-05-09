@@ -2,8 +2,7 @@
 Group Members
 123014 Dennis Ochieng Otieno
 119215 Stephen Munga
-122566 Daphne Wambugu
-120627 Shelmith Nyagoha
+122566 Daphne Wamb
 first commmit
 This project focuses on the public transport. In deals with payment and booking of public vehicles, it enables passengers to pay using the app the cost that would been displayed and 
 in return receive a receipt. A user can register either as a SACCO Manager or a passenger. 
