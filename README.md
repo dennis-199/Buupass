@@ -1,6 +1,4 @@
 # Buupass
-
- Denni
 first commmit
 This project focuses on the public transport. In deals with payment and booking of public vehicles, it enables passengers to pay using the app the cost that would been displayed and 
 in return receive a receipt. A user can register either as a SACCO Manager or a passenger. 
